@@ -1,0 +1,33 @@
+name: Solicitud de cambio de alcance
+description: UTHGRA CABA solicita un cambio en el alcance funcional acordado. El proveedor responde con su impacto dentro de los 5 días hábiles (art. 19.5).
+title: "[Cambio de alcance] "
+labels: ["cambio-de-alcance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Solo UTHGRA CABA abre este tipo de solicitud. Un cambio con costo requiere orden de compra adicional firmada **antes** de ejecutarse (art. 19.5).
+        Regla de congelamiento: no se incorporan cambios 30 días antes de H3 y H4, ni 15 días antes de H5 a H9, salvo acuerdo escrito que posponga el hito.
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del cambio
+    validations:
+      required: true
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Motivo
+    validations:
+      required: true
+  - type: dropdown
+    id: hitos
+    attributes:
+      label: Hitos afectados
+      multiple: true
+      options: [H0, H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11]
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto (lo completa el proveedor)
+      description: Horas, cronograma y costo. Indicar si corresponde a defecto, a Ventana de Ajuste Funcional (art. 3.4) o a cambio con costo.

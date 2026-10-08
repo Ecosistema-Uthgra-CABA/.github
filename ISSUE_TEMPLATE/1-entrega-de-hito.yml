@@ -1,0 +1,69 @@
+name: Entrega de hito
+description: El proveedor notifica formalmente la entrega de un hito. Desde esta notificación corren los 10 días hábiles de revisión (art. 3.2).
+title: "[Entrega] H__ · "
+labels: ["entrega-de-hito"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completar un issue por cada entrega. La fecha de creación de este issue es la **fecha de notificación** a efectos del art. 3.2 del pliego.
+        La aprobación del entregable y la autorización de pago se resuelven por acta firmada, nunca en este issue (art. 19.1).
+  - type: dropdown
+    id: hito
+    attributes:
+      label: Hito
+      options: [H0, H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión entregada
+      description: Tag o pull request fusionado en main que contiene la entrega (ej. v1.3.0 o #42).
+    validations:
+      required: true
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance entregado
+      description: Entregables del hito según el art. 3.1 y su artículo de fase, con la ubicación de cada uno en el repositorio.
+    validations:
+      required: true
+  - type: checkboxes
+    id: evidencia
+    attributes:
+      label: Evidencia de cierre (art. 3.2)
+      description: Indicar la ubicación de cada evidencia en el campo siguiente.
+      options:
+        - label: Casos de uso asociados al alcance aprobado
+        - label: Criterios de aceptación funcionales y técnicos
+        - label: Casos de prueba de aceptación preparados para usuarios designados de UTHGRA CABA
+        - label: Evidencia de pruebas automatizadas, con reporte de cobertura del pipeline (mínimo 70%, art. 18.2)
+        - label: Registro de defectos abiertos, corregidos y aceptados
+        - label: Evidencia de seguridad (si el hito involucra permisos, datos sensibles, pagos o documentos)
+        - label: Documentación actualizada del módulo
+  - type: textarea
+    id: ubicacion-evidencia
+    attributes:
+      label: Ubicación de la evidencia
+      description: Enlaces o rutas dentro del repositorio para cada ítem marcado.
+    validations:
+      required: true
+  - type: dropdown
+    id: entorno
+    attributes:
+      label: Entorno donde está desplegada la entrega
+      description: Las pruebas de aceptación se ejecutan solo en staging (art. 19.4).
+      options: [Staging, Producción, Otro]
+    validations:
+      required: true
+  - type: textarea
+    id: defectos-conocidos
+    attributes:
+      label: Defectos conocidos y plan de corrección
+      description: Severidad según art. 19.4 (crítica, alta, media).
+  - type: textarea
+    id: diferidos
+    attributes:
+      label: Ítems propuestos para la Ventana de Ajuste Funcional (solo H5 a H9)
+      description: Art. 3.4. No incluye módulos nuevos, integraciones no previstas, perfiles nuevos ni cambios en reglas de cálculo.

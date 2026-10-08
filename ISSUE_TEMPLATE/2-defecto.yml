@@ -1,0 +1,47 @@
+name: Defecto
+description: Reportar un defecto encontrado en pruebas o en uso. Las correcciones de funcionalidad ya pactada son defectos, no cambios de alcance (art. 19.5).
+title: "[Defecto] "
+labels: ["defecto"]
+body:
+  - type: dropdown
+    id: severidad
+    attributes:
+      label: Severidad (art. 19.4)
+      options:
+        - "Crítica: impide completar el flujo principal"
+        - "Alta: afecta una funcionalidad importante con alternativa compleja"
+        - "Media: afecta una funcionalidad accesoria o tiene alternativa simple"
+    validations:
+      required: true
+  - type: dropdown
+    id: hito
+    attributes:
+      label: Hito o módulo afectado
+      options: [H0, H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, "No corresponde a un hito"]
+    validations:
+      required: true
+  - type: dropdown
+    id: entorno
+    attributes:
+      label: Entorno
+      options: [Staging, Producción, Desarrollo]
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducirlo
+      description: No incluir datos personales reales de afiliados, trabajadores ni empleadores (art. 18.4). Usar datos anonimizados.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado y resultado obtenido
+    validations:
+      required: true
+  - type: input
+    id: rol
+    attributes:
+      label: Rol del sistema con el que ocurrió
+      description: Ej. Empadronador, Jefatura de Recaudación, Contador.

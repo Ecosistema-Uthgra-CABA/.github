@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Pliego de Bases y Condiciones vigente
+    url: https://github.com/Ecosistema-Uthgra-CABA/sistema-integral-uthgra/blob/main/pliego/Pliego_Consolidado_v2.0_fuente.md
+    about: Documento contractual contra el que se controla cada entrega.
